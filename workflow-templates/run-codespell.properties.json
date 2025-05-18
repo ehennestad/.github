@@ -1,7 +1,7 @@
 {
     "name": "ehennestad's Codespell Workflow",
     "description": "Codespell workflow template for ehennestad.",
-    "iconName": "example-icon",
+    "iconName": "octicon pencil",
     "categories": [
         "code-quality",
         "MATLAB"
