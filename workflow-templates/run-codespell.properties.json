@@ -1,0 +1,9 @@
+{
+    "name": "ehennestad's Codespell Workflow",
+    "description": "Codespell workflow template for ehennestad.",
+    "iconName": "example-icon",
+    "categories": [
+        "code-quality",
+        "MATLAB"
+    ]
+}
