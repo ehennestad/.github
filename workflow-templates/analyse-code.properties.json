@@ -1,0 +1,9 @@
+{
+    "name": "ehennestad's Code Analyser Workflow",
+    "description": "Code analyser workflow template for ehennestad.",
+    "iconName": "octicon codescan",
+    "categories": [
+        "code-quality",
+        "MATLAB"
+    ]
+}
