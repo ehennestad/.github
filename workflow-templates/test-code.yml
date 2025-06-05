@@ -1,0 +1,17 @@
+name: Test code
+
+on:
+  push:
+    branches: [ $default-branch ]
+    
+  pull_request:
+    branches: [ $default-branch ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reuse-workflow-test-code:
+    name: Test code
+    uses: ehennestad/matbox/.github/workflows/reusable_test_workflow.yml@v0.9

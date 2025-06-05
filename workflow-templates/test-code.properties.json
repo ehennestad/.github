@@ -1,0 +1,9 @@
+{
+    "name": "ehennestad's Test Workflow",
+    "description": "Test workflow template for ehennestad.",
+    "iconName": "octicon codescan-checkmark",
+    "categories": [
+        "testing",
+        "MATLAB"
+    ]
+}
