@@ -1,6 +1,6 @@
 {
-    "name": "ehennestad's Code Analyser Workflow",
-    "description": "Code analyser workflow template for ehennestad.",
+    "name": "Code Analyser Workflow",
+    "description": "Check code using the MATLAB® Code Analyzer and upload code issues report to GitHub.",
     "iconName": "octicon codescan",
     "categories": [
         "code-quality",

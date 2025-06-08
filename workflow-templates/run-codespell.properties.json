@@ -1,9 +1,8 @@
 {
-    "name": "ehennestad's Codespell Workflow",
-    "description": "Codespell workflow template for ehennestad.",
+    "name": "Codespell Workflow",
+    "description": "Check code for common misspellings using Codespell",
     "iconName": "octicon pencil",
     "categories": [
-        "code-quality",
-        "MATLAB"
+        "code-quality"
     ]
 }
