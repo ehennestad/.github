@@ -12,9 +12,9 @@ on:
         type: string
 
 jobs:
-  reuse-workflow-release:
+  prepare-release:
     name: Prepare toolbox release
-    uses: ehennestad/matbox/.github/workflows/reusable_release_workflow.yml@make-release-workflow-reusable
+    uses: ehennestad/matbox-actions/.github/workflows/prepare-release-workflow.yml@v1
     with:
       # Do not change
       version: ${{ inputs.version }}
@@ -24,8 +24,12 @@ jobs:
       
       # Path to directory containing source code. This directory will be packaged
       # into the toolbox. Important: This should not be a namespace directory
-      code_directory: code
+      source_directory: src
       
+      # Path to directory containing tests. This directory will be used for 
+      # locating MATLAB  test suites
+      tests_directory: tests
+
       # Path to directory containing tools and MLToolboxInfo.json. Used for finding
       # unit tests, running customized MatBox tasks, and determining toolbox metadata
       tools_directory: tools
@@ -35,6 +39,12 @@ jobs:
       # matlab_versions: '["R2023a", "R2023b", "R2024a"]'
       matlab_versions: '[]'
       
+      # Optional list of MATLAB products to install. Example if adding multiple 
+      # products (use ">" and one product per line):
+      # matlab_products: >
+      #   Image_Processing_Toolbox
+      #   Statistics_and_Machine_Learning_Toolbox
+
       # JSON object mapping MATLAB versions to Python versions. Use this to override
       # specific Python versions for certain MATLAB releases. Only specify versions
       # you want to override - others will use latest supported release from 

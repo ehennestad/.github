@@ -12,13 +12,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  reuse-workflow-check-code:
+  check_code:
     name: Run code analyser
-    uses: ehennestad/matbox/.github/workflows/reusable_check_code.yml@v0.9
+    uses: ehennestad/matbox-actions/.github/workflows/check-code-workflow.yml@v1
     with:
-      # Path to directory with code. Code Analysis will run on the contents of 
-      # the specified folder (and subfolders)
-      code_directory: code
+      # Path to directory with source code. Code Analysis will run on the 
+      # contents of the specified folder (and subfolders)
+      source_directory: src
       
       # Path to directory with (CI) tools. Used for finding customized MatBox 
       # tasks
@@ -26,3 +26,6 @@ jobs:
       
       # Name of MATLAB Release to use for running code analysis
       matlab_release: latest
+
+      # Whether to cache the MATLAB installation for faster subsequent setups.
+      matlab_use_cache: true

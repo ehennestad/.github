@@ -3,22 +3,32 @@ name: Test code
 on:
   push:
     branches: [ $default-branch ]
-    
+    paths-ignore:
+      - '*md'
+      - '.github/**'
+
   pull_request:
     branches: [ $default-branch ]
+    paths-ignore:
+      - '*md'
+      - '.github/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  reuse-workflow-test-code:
-    name: Test code
-    uses: ehennestad/matbox/.github/workflows/reusable_test_workflow.yml@v0.9
+  test-code:
+    name: Analyse and test code
+    uses: ehennestad/matbox-actions/.github/workflows/test-code-workflow.yml@v1
     with:
       # Path to directory with code. Code coverage and code analysis will run 
       # on the contents of the specified folder (and subfolders)
-      code_directory: code
+      source_directory: src
+      
+      # Path to directory containing tests. This directory will be used for 
+      # locating MATLAB  test suites
+      tests_directory: tests
       
       # Path to directory with (CI) tools or tests. Used for finding unit tests
       # and running customized MatBox tasks
